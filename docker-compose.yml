@@ -3,7 +3,7 @@ services:
   application:
     image: spring-boot-mysql-app
     ports:
-      - "8080:8080"
+      - "8484:8484"
     networks:
       - springboot-db-net
     depends_on:
