@@ -4,16 +4,12 @@ services:
     image: spring-boot-mysql-app
     ports:
       - "8484:8484"
-    networks:
-      - springboot-db-net
     depends_on:
       - mysqldb
     volumes:
       - /data/springboot-app
   mysqldb:
     image: mysql:8.0
-    networks:
-      - springboot-db-net
     ports:
      - "3306:3306"
     environment:
@@ -21,5 +17,3 @@ services:
       - MYSQL_DATABASE=sbms
     volumes:
       - /data/mysql
-networks:
-  springboot-db-net:
